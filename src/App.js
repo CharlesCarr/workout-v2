@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-// Component Imports
+// Functional Component Imports
 import NewWorkoutPage from "./pages/NewWorkout";
 import AllWorkoutsPage from "./pages/AllWorkouts";
 import TodayWorkoutPage from "./pages/TodayWorkout";
 import AuthPage from "./pages/Auth";
-import NavBar from "./components/layout/NavBar";
+import NavBar from "./components/layout/navbar/NavBar";
 // Style Imports
 import "./App.css";
 import { createTheme } from "@mui/material/styles";
@@ -13,24 +13,15 @@ import { createTheme } from "@mui/material/styles";
 import { onValue, ref } from "firebase/database";
 import { auth, db } from "./firebase";
 
-
-
 function App() {
   // state for Todos - going to be an array b/c will have an array of objects in this
   // this is really the exercises within the created workout - should change variable names
   const [todos, setTodos] = useState([]);
-
   //  state for Workout title
   const [inputTitle, setInputTitle] = useState("");
-
   //  state for fullWorkouts - going to be an array (will have the todos array inside for each individual workout)
   const [fullWorkouts, setFullWorkouts] = useState([]);
-  // this is the saved data for the entire workout - this is what I want to write to the database!!!
-  console.log(fullWorkouts);
-
   const [wholeWorkout, setWholeWorkout] = useState([]);
-  console.log(wholeWorkout);
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Firebase connection
@@ -68,7 +59,12 @@ function App() {
 
   return (
     <div>
-      <NavBar colorTheme={colorTheme} setWholeWorkout={setWholeWorkout} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      <NavBar
+        colorTheme={colorTheme}
+        setWholeWorkout={setWholeWorkout}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+      />
 
       <Switch>
         <Route path="/new-workout">
