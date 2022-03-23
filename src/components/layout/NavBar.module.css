@@ -1,0 +1,12 @@
+.link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navtext {
+    transition: ease-in 200ms all;
+}
+
+.navtext:hover {
+    color: #EF3651;
+}

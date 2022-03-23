@@ -1,0 +1,68 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+}
+
+.loginRegisterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 5%;
+    border-radius: 25px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 40%;
+    background-color: #EEEEEE;
+    margin-bottom: 10%;
+}
+
+.authTitle {
+    text-align: center;
+    border-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #2A2C36;
+    color: #EEEEEE;
+    width: 40%;
+    padding: 2%;
+    margin-bottom: 0;
+    margin-top: 2%;
+}
+
+/* .inputField {
+    margin: 5%;
+    width: 70%;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-top: 7.5%;
+}
+
+.btn {
+    margin: 3% 0%;
+    border-radius: 20px;
+} */
+
+@media only screen and (max-width: 725px) {
+    .loginRegisterContainer {
+        width: 80%;
+    }
+    .authTitle {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .authContainer {
+        margin-top: 1%;
+    }
+    .authTitle {
+        padding: 5%;
+    }
+}

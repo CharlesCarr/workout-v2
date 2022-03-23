@@ -1,0 +1,264 @@
+/* 
+NEW COLORS FOR REDESIGN:
+Main Background - #1E1F28
+Table Background - #2A2C36
+Button New Workout Color - #EF3651 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1e1f28;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* For AllWorkouts */
+.pagetitle {
+  background-color: #ef3651;
+  color: white;
+  padding: 1% 6%;
+  border-radius: 50px;
+}
+
+.workoutTableContainer {
+  width: 100%;
+}
+
+.noWorkouts {
+  color: white;
+}
+
+.new-wkt-header {
+  background-color: #eeeeee;
+}
+
+/* Will need for input (and children) component css module */
+.input-form {
+  margin-right: 5px;
+  /* color: #EF3651; */
+}
+
+/* Will need for Workout.js & FullTodayWorkout.js component css module */
+.all-workout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  width: 50%;
+  background-color: #2a2c36;
+  /* box-shadow: 10px 5px 5px #2A2C36; */
+  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+  /* padding: 2% 3%; */
+  padding-top: 1.5%;
+  border-radius: 5px;
+  /* adding for switch button positioning */
+  position: relative;
+}
+
+/* NEED - newworkout.js */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4%;
+}
+
+.trash-btn {
+  background-color: #ef3651;
+  cursor: pointer;
+  transition: 200ms all ease;
+}
+
+.trash-btn:hover {
+  filter: brightness(0.85);
+}
+
+/* for new workout inputs - can add other classes 
+to each to reflect how much text is needed */
+.todo-input {
+  max-width: 100px;
+}
+
+/* for the longer input field (exercise) */
+.long {
+  max-width: 150px;
+}
+
+.submitExercise {
+  cursor: pointer;
+  color: white;
+  transition: 300ms all ease;
+}
+
+.submitExercise:hover {
+  color: #ef3651;
+}
+
+/* Will need for Newworkout.js */
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #757575;
+  margin-top: 2%;
+  padding: 0 4%;
+  border-radius: 40px;
+}
+
+/* Will need for Today.js component css module */
+.today-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2c36;
+  padding: 3% 5%;
+  margin-top: 3%;
+  border-radius: 40px;
+  width: 50%;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2c36;
+  padding: 3% 5%;
+  margin-top: 3%;
+  border-radius: 40px;
+  /* width: 50%; */
+}
+
+/* Will need for Today.js component css module */
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 3%;
+}
+
+.today-workout-container {
+  margin-top: 0;
+  width: 100%;
+}
+
+.confirm-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switchBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ef3651;
+  cursor: pointer;
+  transition: 200ms all ease;
+}
+
+.switchBtn:hover {
+  filter: brightness(0.85);
+}
+
+/* Will need for Workout.js */
+.deleteBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ef3651;
+  cursor: pointer;
+  transition: 200ms all ease;
+}
+
+.switchBtn:hover {
+  filter: brightness(0.85);
+}
+
+/* Will need for FullTodayWorkout.js css module */
+.workout-title {
+  margin-bottom: 3%;
+  margin-top: 1%;
+  color: white;
+  padding: 3% 1.5%;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* For NewWorkout.js css module */
+.save-wkt-btn {
+  transition: 200ms all ease;
+}
+.save-wkt-btn:hover {
+  color: #ef3651;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 600px) {
+  .all-workout-container {
+    width: 90%;
+    margin-bottom: 10%;
+  }
+  .input-container {
+    flex-direction: column;
+    margin-top: 10%;
+    width: 60%;
+    padding: 2% 0 0 0;
+  }
+  .input-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .todo-input {
+    max-width: 200px;
+  }
+  .submitExercise {
+    align-self: flex-end;
+    margin-top: 2%;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #eeeeee;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 4% 0;
+    margin-top: 5%;
+  }
+
+  .today-container {
+    padding: 8% 10%;
+    width: 90%;
+  }
+}
+
+/* Media Query iPhone SE (375) */
+@media only screen and (max-width: 375px) {
+  .input-container {
+    width: 80%;
+  }
+
+  .today-container {
+    margin-top: 10%;
+  }
+
+  .select-container {
+    padding: 10%;
+  }
+}
