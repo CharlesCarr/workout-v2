@@ -1,6 +1,4 @@
-import TableBody from "@mui/material/TableBody";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
+import { TableBody, TableRow, TableCell } from "@mui/material";
 
 function SelectedWorkout(props) {
   return (

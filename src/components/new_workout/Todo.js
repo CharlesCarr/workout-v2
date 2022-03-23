@@ -1,8 +1,6 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
-
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
+import { TableRow, TableCell } from "@mui/material";
 
 const Todo = ({ exercise, setsreps, weight, todo, todos, setTodos, index }) => {
   const deleteHandler = () => {

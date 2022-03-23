@@ -1,26 +1,17 @@
 import React, { useState } from "react";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
-
 // Importing components
 import Input from "../components/new_workout/Input";
 import TodoList from "../components/new_workout/TodoList";
 import CustomModal from "../components/new_workout/Modal";
 import Backdrop from "../components/layout/Backdrop";
-
 // Import Material UI Components
-import Button from "@mui/material/Button";
-import Table from "@mui/material/Table";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import Paper from "@mui/material/Paper";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
+import { Typography, Button, Table, TableContainer, TableHead, Paper, TableRow, TableCell  } from "@mui/material";
 import {
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
 } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 
 function NewWorkoutPage(props) {
   // array destructuring for useState [value, function to change that value]

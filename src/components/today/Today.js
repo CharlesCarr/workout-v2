@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+// MUI Imports
+import { Box, Card, CardActions, CardContent, Button, Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-
+// Function Component Imports
 import TodayDropDown from "./TodayDropDown";
-import DisplayTodayWorkout from "./DisplayTodayWorkout";
 import FullTodayWorkout from "./FullTodayWorkout";
 
 function Today(props) {

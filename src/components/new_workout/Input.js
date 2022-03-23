@@ -2,8 +2,8 @@ import React from "react";
 import ExerciseForm from "./ExerciseForm";
 import SetsRepsForm from "./SetsRepsForm";
 import Form from "./Form";
+// MUI Imports
 import { ThemeProvider } from "@mui/material/styles";
-
 import Icon from "@mui/material/Icon";
 
 // Simplified way of adding props is using the {} and passing in what you want - instead of 'props.setInputText' to get access

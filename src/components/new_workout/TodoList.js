@@ -1,7 +1,6 @@
 import React from "react";
 import { Droppable } from "react-beautiful-dnd";
 import Todo from "./Todo";
-
 import TableBody from "@mui/material/TableBody";
 
 const TodoList = ({ todos, setTodos }) => {

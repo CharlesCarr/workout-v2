@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+// Firebase Imports
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -7,14 +8,14 @@ import {
 } from "firebase/auth";
 import { auth, db } from "../firebase";
 import classes from "./Auth.module.css";
-
+// MUI Imports
 import {
   ThemeProvider,
   createTheme,
   responsiveFontSizes,
 } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-
+// Functional Component Imports
 import Register from "../components/auth/Register";
 import Login from "../components/auth/Login";
 

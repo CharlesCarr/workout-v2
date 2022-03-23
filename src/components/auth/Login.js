@@ -1,7 +1,6 @@
 // imports
 import { ThemeProvider } from "@mui/material/styles";
-import { Button } from "@mui/material";
-import TextField from "@mui/material/TextField";
+import { Button, TextField } from "@mui/material";
 import classes from "./Login.module.css";
 
 const Login = (props) => {

@@ -1,15 +1,7 @@
 import CompletedWorkout from "./CompletedWorkout";
-
 // Import Material UI Components
-import Table from "@mui/material/Table";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import Paper from "@mui/material/Paper";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
-import Typography from "@mui/material/Typography";
+import { Table, TableContainer, TableHead, Paper, TableRow, TableCell, Typography } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-
 // Import Firebase
 import { auth, db } from "../../firebase";
 import { ref, remove } from "firebase/database";

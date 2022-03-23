@@ -5,7 +5,6 @@ import {
   responsiveFontSizes,
 } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-// import Divider from '@mui/material/Divider';
 
 function AllWorkoutsPage(props) {
   const noWorkouts = <Typography className="noWorkouts" variant="h5"><p>(No Saved Workouts to Display)</p></Typography>;

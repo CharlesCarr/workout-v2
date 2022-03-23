@@ -1,13 +1,6 @@
 import DisplayTodayWorkout from "./DisplayTodayWorkout";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
-import Table from "@mui/material/Table";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-
+// MUI Imports
+import { TableRow, TableCell, Table, TableContainer, TableHead, Paper, Typography } from "@mui/material";
 import SwapVerticalCircleOutlinedIcon from "@mui/icons-material/SwapVerticalCircleOutlined";
 
 function FullTodayWorkout(props) {
@@ -36,15 +29,6 @@ function FullTodayWorkout(props) {
       <Typography className="workout-title" variant="h5" gutterBottom>
         {findTitle()}
       </Typography>
-
-      {/* <Button
-        onClick={() => props.setWorkoutSelected(false)}
-        variant="outlined"
-        color="error"
-        size="small"
-      >
-        Change
-      </Button> */}
 
       <TableContainer
         className="workoutTableContainer"

@@ -1,17 +1,16 @@
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import { FormHelperText } from '@mui/material';
-
+import {
+  Box,
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  FormHelperText,
+} from "@mui/material";
 
 function TodayDropDown(props) {
   const handleChange = (event) => {
     props.setWorkoutDropDown(event.target.value);
   };
-
-  
 
   return (
     <Box sx={{ minWidth: 120 }}>
