@@ -1,71 +1,40 @@
-# Getting Started with Create React App
+# Workout Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+V2 of workout web application built with React.js and Firebase to build, save, and view user workouts
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+I designed and built this mobile friendly, responsive workout web app with React.js, including React Hooks. I used both custom style sheets with CSS3 and the Material UI (v5 4.2) library to style components. Additionally, I used Atlassian's 'react-beautiful-dnd' to add drag and drop functionality.
 
-### `npm start`
+Areas of focus for this project include: 
+- React Router to create a single page application with navigation
+- Managing and Lifting State with useState() hook to dynamically change UI
+- Passing workout data with props after creating in the workout builder page to the all workouts library page and finally to the today's workout display
+- Styling React components with Material UI (v5 4.2) as well as custom CSS style sheets
+- Drap and drop functionality for the workout builder so the user can order the excercises how they wish (using react-beautiful-dnd npm package)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Flow of Application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. The first page the user sees is the workout builder where the user can create exercises by filling out input information on exercise name, setsxreps, and weight
+    - The user has the ability to delete any exercises after creation
+    - The user can also drag and drop workouts to edit the order of exercises within the workout
+    - After completing the workout, the user can save the workout and either create more workouts or view in the all workouts page
+2. The second page is where the user can view all of the workouts that they have created in the workout builder 
+3. The third page is where the user can select from a drop down to view their workout that they will do for the day for easy reference
 
-### `npm test`
+### About
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is my first independent React.js web application that I have built that was not a part of a course / tutorial. The idea for this app came as I have been using other apps like Apple Notes and Notion to track my workouts but wanted to build something more workout specific. After completing a To Do list web app with React.js as part of an online course, I came up with this idea as many of the basic principles overlapped.
 
-### `npm run build`
+### Next Steps 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+My plan is for this to be the initial version one of the this project with style improvements and features to be added soon. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A few additions I have in mind: 
+- I plan to build additional functionality for this app with creating a workout plan for the entire week from the library of workouts in the 'all workouts' page. 
+- I also plan to add more functionality to have input to log the today's workout live for the actual setsxreps, weight, and order for each exercise. 
+- Additionally, I will create a backend for this with a user profiles and create an iOS verison after learning more about React Native. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Hosting
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# workout-two
+Will be hosting with Firebase
