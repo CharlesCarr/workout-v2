@@ -70,6 +70,9 @@ function AuthPage(props) {
       .then(() => {
         history.replace("/new-workout");
         props.setIsLoggedIn(true);
+        // need to use local storage to store login token so dont lose login after refresh
+        // call function that saves the token and pass in the tokendetails then do the local storage in that function
+
       })
       .catch(() => setErrors({ invalidLogin: "Invalid Login Credentials" }));
   };
