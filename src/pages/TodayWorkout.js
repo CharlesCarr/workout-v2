@@ -8,19 +8,18 @@ import {
 import Typography from "@mui/material/Typography";
 
 function TodayWorkoutPage(props) {
+  // state for workout title selected from drop down
   const [workoutDropDown, setWorkoutDropDown] = useState("");
-  //   console.log(workoutDropDown);
 
   // Adding responsive font sizing from material ui
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
-  const header = "TODAY'S WORKOUT";
 
   return (
     <div className="app">
       <ThemeProvider theme={theme}>
         <Typography className="pagetitle" variant="h3" gutterBottom>
-          {header}
+          TODAY'S WORKOUT
         </Typography>
       </ThemeProvider>
 

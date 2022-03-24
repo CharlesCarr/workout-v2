@@ -14,6 +14,7 @@ function CustomModal(props) {
     props.setInputTitle(event.target.value);
   };
 
+  // save data to Firebase
   const writeToDatabase = () => {
     const uidd = uid();
     set(ref(db, `${auth.currentUser.uid}/${uidd}`), {
@@ -24,24 +25,10 @@ function CustomModal(props) {
   };
 
   const saveHandler = () => {
-    // call a function in here that calls a function in NewWorkout
-    // props.passWorkoutData(props.todos);
-
-    // then will close the modal
+    // calls function to close the modal
     props.onClick();
 
-    // also want to clear out the workout builder
-    // think will also need to have an array of all the workouts somewhere
-    // props.setFullWorkouts([
-    //   ...props.fullWorkouts,
-    //   {
-    //     id: Math.random(),
-    //     title: props.inputTitle,
-    //     testFullWorkouts: [props.todos],
-    //   },
-    // ]);
-
-    // believe writing to database will eliminate the need to be passing all these props and state for full workouts 
+    // writing to database will eliminate the need to be passing all these props and state for full workouts 
     // will only need to write to db for one workout that is just saved and then can pull the workout from the db for all other pages
     writeToDatabase();
 

@@ -1,12 +1,21 @@
 import CompletedWorkout from "./CompletedWorkout";
 // Import Material UI Components
-import { Table, TableContainer, TableHead, Paper, TableRow, TableCell, Typography } from "@mui/material";
+import {
+  Table,
+  TableContainer,
+  TableHead,
+  Paper,
+  TableRow,
+  TableCell,
+  Typography,
+} from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 // Import Firebase
 import { auth, db } from "../../firebase";
 import { ref, remove } from "firebase/database";
 
 function Workout(props) {
+  // deleting workout from Firebase
   const deleteHandler = (uid) => {
     remove(ref(db, `/${auth.currentUser.uid}/${uid}`));
   };
@@ -15,7 +24,7 @@ function Workout(props) {
     <div className="all-workout-container">
       {/* Add icon here for the delete workout functionality to delete from db */}
       <HighlightOffIcon
-        onClick={()=> deleteHandler(props.uid)}
+        onClick={() => deleteHandler(props.uid)}
         className="deleteBtn"
         fontSize="large"
       ></HighlightOffIcon>
@@ -44,6 +53,7 @@ function Workout(props) {
             </TableRow>
           </TableHead>
 
+          {/* mapping over each individual workout to get to the actual exercises */}
           {props.fullWorkout.map((individual) => {
             return individual.map((ind) => {
               return <CompletedWorkout ind={ind} key={ind.id} />;

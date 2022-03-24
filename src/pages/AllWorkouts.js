@@ -7,27 +7,37 @@ import {
 import Typography from "@mui/material/Typography";
 
 function AllWorkoutsPage(props) {
-  const noWorkouts = <Typography className="noWorkouts" variant="h5"><p>(No Saved Workouts to Display)</p></Typography>;
+  // to be displayed conditionally if no workouts saved
+  const noWorkouts = (
+    <Typography className="noWorkouts" variant="h5">
+      <p>(No Saved Workouts to Display)</p>
+    </Typography>
+  );
   const testTrue = props.wholeWorkout.length === 0;
 
   // Adding responsive font sizing from material ui
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
-  const header = "ALL WORKOUTS";
 
   return (
     <div className="app">
       <ThemeProvider theme={theme}>
         <Typography className="pagetitle" variant="h3" gutterBottom>
-          {header}
+          ALL WORKOUTS
         </Typography>
       </ThemeProvider>
 
       {testTrue && noWorkouts}
 
+      {/* mapping list of all workouts saved in db and display each one individually */}
       {props.wholeWorkout.map((workout) => {
         return (
-          <Workout key={workout.uidd} uid={workout.uidd} title={workout.title} fullWorkout={workout.fullWorkout} />
+          <Workout
+            key={workout.uidd}
+            uid={workout.uidd}
+            title={workout.title}
+            fullWorkout={workout.fullWorkout}
+          />
         );
       })}
     </div>

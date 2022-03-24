@@ -56,7 +56,6 @@ const Input = ({
       />
       <ThemeProvider theme={theme}>
         <Icon
-          // color="primary"
           onClick={submitTodoHandler}
           fontSize="large"
           className="submitExercise"

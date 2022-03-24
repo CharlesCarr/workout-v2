@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 // MUI Imports
-import { Box, Card, CardActions, CardContent, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  Button,
+  Typography,
+} from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 // Function Component Imports
 import TodayDropDown from "./TodayDropDown";
@@ -11,7 +18,6 @@ function Today(props) {
   const [selectionError, setSelectionError] = useState(false);
 
   const selectWorkoutHandler = () => {
-    // console.log(props.workoutDropDown);
     // need to add check on if there is an actual value selected
     // if so then do the code that you already have
     if (props.workoutDropDown) {
@@ -20,7 +26,6 @@ function Today(props) {
       setWorkoutSelected(true);
     } else {
       setSelectionError(true);
-      // alert('Need to select a workout for today!');
     }
   };
 
@@ -60,7 +65,6 @@ function Today(props) {
   );
 
   return (
-    // today-container
     <>
       {!workoutSelected && (
         <div className={workoutSelected ? "" : "select-container"}>

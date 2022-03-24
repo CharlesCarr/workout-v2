@@ -2,17 +2,13 @@ import SelectedWorkout from "./SelectedWorkout";
 
 function DisplayTodayWorkout(props) {
   const findWorkout = () => {
-
-    // switched the names of the variables but think may need something new here to find the correct one from the db
-
     //   logic here to check the workoutDropDown id to find the appropriate fullWorkout and then display that fullWorkout
+    // loop through all workouts in the db
     for (let i = 0; i < props.wholeWorkout.length; i++) {
+      // if that workout id matches the id of the workout drop down
       if (props.wholeWorkout[i].uidd === props.workoutDropDown) {
-        for (
-          let j = 0;
-          j < props.wholeWorkout[i].fullWorkout.length;
-          j++
-        ) {
+        // loop through exercises within that matched workout
+        for (let j = 0; j < props.wholeWorkout[i].fullWorkout.length; j++) {
           //   this gets the array of objects of the correct workout
           let correctWorkoutArr = props.wholeWorkout[i].fullWorkout[j];
           return correctWorkoutArr;
@@ -21,6 +17,7 @@ function DisplayTodayWorkout(props) {
     }
   };
 
+  // mapping over the correct workout from selection and displaying the workout
   return findWorkout().map((exercise) => {
     return (
       <SelectedWorkout

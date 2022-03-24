@@ -20,7 +20,7 @@ const Register = (props) => {
           label="Email"
           color="primary"
           error={Boolean(props.errors?.email)}
-          helperText={(props.errors?.email)}
+          helperText={props.errors?.email}
           sx={{ marginTop: 2, marginBottom: 2 }}
         />
         <TextField
@@ -37,7 +37,7 @@ const Register = (props) => {
           label="Confirm Email"
           color="primary"
           error={Boolean(props.errors?.confirmEmail)}
-          helperText={(props.errors?.confirmEmail)}
+          helperText={props.errors?.confirmEmail}
           sx={{ marginTop: 2, marginBottom: 2 }}
         />
         <TextField
@@ -56,7 +56,7 @@ const Register = (props) => {
           label="Password"
           color="primary"
           error={Boolean(props.errors?.password)}
-          helperText={(props.errors?.password)}
+          helperText={props.errors?.password}
           sx={{ marginTop: 2, marginBottom: 2 }}
         />
         <TextField
@@ -75,7 +75,7 @@ const Register = (props) => {
           label="Confirm Password"
           color="primary"
           error={Boolean(props.errors?.confirmPassword)}
-          helperText={(props.errors?.confirmPassword)}
+          helperText={props.errors?.confirmPassword}
           sx={{ marginTop: 2, marginBottom: 2 }}
         />
         <div className={classes.btnContainer}>
@@ -84,7 +84,7 @@ const Register = (props) => {
             variant="contained"
             onClick={props.handleRegister}
             color="secondary"
-            sx={{ marginTop: 2, marginBottom: 2, borderRadius:"40px" }}
+            sx={{ marginTop: 2, marginBottom: 2, borderRadius: "40px" }}
           >
             Create Account
           </Button>
@@ -93,7 +93,7 @@ const Register = (props) => {
             variant="contained"
             onClick={() => props.setIsRegistering(false)}
             color="secondary"
-            sx={{borderRadius: "40px"}}
+            sx={{ borderRadius: "40px" }}
           >
             Go Back
           </Button>

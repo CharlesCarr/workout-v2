@@ -1,6 +1,14 @@
 import DisplayTodayWorkout from "./DisplayTodayWorkout";
 // MUI Imports
-import { TableRow, TableCell, Table, TableContainer, TableHead, Paper, Typography } from "@mui/material";
+import {
+  TableRow,
+  TableCell,
+  Table,
+  TableContainer,
+  TableHead,
+  Paper,
+  Typography,
+} from "@mui/material";
 import SwapVerticalCircleOutlinedIcon from "@mui/icons-material/SwapVerticalCircleOutlined";
 
 function FullTodayWorkout(props) {
@@ -10,7 +18,9 @@ function FullTodayWorkout(props) {
   const findTitle = () => {
     //   logic here to check the workoutDropDown id to find the appropriate fullWorkout and then display that fullWorkout
     for (let i = 0; i < props.wholeWorkout.length; i++) {
+      // check for the workout id to match the workout selected
       if (props.wholeWorkout[i].uidd === props.workoutDropDown) {
+        // sets the title to be displayed as the title found from match
         let todayWorkoutTitle = props.wholeWorkout[i].title;
         return todayWorkoutTitle;
       }
@@ -33,13 +43,9 @@ function FullTodayWorkout(props) {
       <TableContainer
         className="workoutTableContainer"
         component={Paper}
-        // sx={{ maxWidth: 800 }}
         style={{ borderTopLeftRadius: "0", borderTopRightRadius: "0" }}
       >
-        <Table
-          className="workoutTable"
-          // sx={{ maxWidth: 800 }}
-        >
+        <Table className="workoutTable">
           <TableHead className="new-wkt-header">
             <TableRow>
               <TableCell className="table-cell head-cell" align="center">

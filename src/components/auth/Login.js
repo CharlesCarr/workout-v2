@@ -28,7 +28,7 @@ const Login = (props) => {
           label="Password"
           color="primary"
           error={Boolean(props.errors?.invalidLogin)}
-          helperText={(props.errors?.invalidLogin)}
+          helperText={props.errors?.invalidLogin}
           sx={{ marginTop: 2, marginBottom: 2 }}
         />
         <div className={classes.btnContainer}>
@@ -37,7 +37,7 @@ const Login = (props) => {
             onClick={props.handleSignIn}
             color="secondary"
             className={classes.btn}
-            sx={{ marginTop: 2, marginBottom: 2, borderRadius:"40px"}}
+            sx={{ marginTop: 2, marginBottom: 2, borderRadius: "40px" }}
           >
             Sign In
           </Button>
@@ -46,7 +46,7 @@ const Login = (props) => {
             onClick={() => props.setIsRegistering(true)}
             color="secondary"
             className={classes.btn}
-            sx={{borderRadius:"40px"}}
+            sx={{ borderRadius: "40px" }}
           >
             Create Account
           </Button>

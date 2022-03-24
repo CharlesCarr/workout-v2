@@ -6,7 +6,16 @@ import TodoList from "../components/new_workout/TodoList";
 import CustomModal from "../components/new_workout/Modal";
 import Backdrop from "../components/layout/Backdrop";
 // Import Material UI Components
-import { Typography, Button, Table, TableContainer, TableHead, Paper, TableRow, TableCell  } from "@mui/material";
+import {
+  Typography,
+  Button,
+  Table,
+  TableContainer,
+  TableHead,
+  Paper,
+  TableRow,
+  TableCell,
+} from "@mui/material";
 import {
   ThemeProvider,
   createTheme,
@@ -14,17 +23,16 @@ import {
 } from "@mui/material/styles";
 
 function NewWorkoutPage(props) {
-  // array destructuring for useState [value, function to change that value]
   // first state I want is the text of the 'Exercise Form' - the first input field
   const [inputExerciseText, setInputExerciseText] = useState("");
   // Next want to get the state for the sets and reps form - the second input field
   const [inputSetsRepsText, setInputSetsRepsText] = useState("");
   // Lastly want to get the state for the weight form - the last input field
   const [inputWeightText, setInputWeightText] = useState("");
-
   //   state for Modal - opening and closing, set to closed at first
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  // Using react d-n-d here
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
 
@@ -38,7 +46,7 @@ function NewWorkoutPage(props) {
   };
 
   const saveWorkoutHandler = () => {
-    // modal/overlay to appear to confirm saving and be able to name the saved workout (can look back at course to do this easily)
+    // modal/overlay to appear to confirm saving and be able to name the saved workout
     setModalIsOpen(true);
   };
 
@@ -57,14 +65,13 @@ function NewWorkoutPage(props) {
   // Adding responsive font sizing from material ui
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
-  const header = "WORKOUT BUILDER";
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <div className="app">
         <ThemeProvider theme={theme}>
           <Typography className="pagetitle" variant="h3" gutterBottom>
-            {header}
+            WORKOUT BUILDER
           </Typography>
         </ThemeProvider>
 
@@ -111,22 +118,22 @@ function NewWorkoutPage(props) {
           />
 
           <div className="button-container">
-          <ThemeProvider theme={props.colorTheme}>
-            <Button
-              onClick={saveWorkoutHandler}
-              className="save-wkt-btn"
-              variant="contained"
-              size="small"
-              style={{
-                maxWidth: "90px",
-                maxHeight: "55px",
-                minWidth: "90px",
-                minHeight: "55px",
-              }}
-            >
-              Save Workout
-            </Button>
-          </ThemeProvider>
+            <ThemeProvider theme={props.colorTheme}>
+              <Button
+                onClick={saveWorkoutHandler}
+                className="save-wkt-btn"
+                variant="contained"
+                size="small"
+                style={{
+                  maxWidth: "90px",
+                  maxHeight: "55px",
+                  minWidth: "90px",
+                  minHeight: "55px",
+                }}
+              >
+                Save Workout
+              </Button>
+            </ThemeProvider>
           </div>
         </div>
 

@@ -8,7 +8,9 @@ import {
 } from "@mui/material";
 
 function TodayDropDown(props) {
+  // handling selection of drop down
   const handleChange = (event) => {
+    // pass the selected workout title
     props.setWorkoutDropDown(event.target.value);
   };
 
@@ -23,6 +25,7 @@ function TodayDropDown(props) {
           label="Workout Title"
           onChange={handleChange}
         >
+          {/* mapping over workouts to display titles */}
           {props.wholeWorkout.map((workout) => {
             return (
               <MenuItem

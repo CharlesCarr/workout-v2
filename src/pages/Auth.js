@@ -50,7 +50,6 @@ function AuthPage(props) {
     });
   }, []);
 
-  // Taken from hotel website's validation - edit for this use case
   // Function to determine valid email from regex
   const isEmail = (email) => {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
@@ -72,11 +71,7 @@ function AuthPage(props) {
         history.replace("/new-workout");
         props.setIsLoggedIn(true);
       })
-      // .catch((err) => alert(err.message));
       .catch(() => setErrors({ invalidLogin: "Invalid Login Credentials" }));
-    // .catch(() => {
-    //   setErrors({ invalidLogin: "Invalid Login Credentials" });
-    // }
   };
 
   const handleRegister = () => {
@@ -109,13 +104,6 @@ function AuthPage(props) {
   // Adding responsive font sizing from material ui
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
-  const header = "WORKOUT TRACKER";
-
-  // can create another theme so that can change spacing and colors
-  // then can wrap the theme provider after passing through props
-
-  // const testTheme = createTheme();
-  // testTheme.spacing(5);
 
   const newColorTheme = createTheme({
     palette: {
@@ -135,38 +123,38 @@ function AuthPage(props) {
     <div className={classes.app}>
       <ThemeProvider theme={theme}>
         <Typography className="pagetitle" variant="h3" gutterBottom>
-          {header}
+          WORKOUT TRACKER
         </Typography>
       </ThemeProvider>
 
-        <Typography className={classes.authTitle} variant="h5">
-          {isRegistering ? "CREATE ACCOUNT" : "SIGN IN"}
-        </Typography>
+      <Typography className={classes.authTitle} variant="h5">
+        {isRegistering ? "CREATE ACCOUNT" : "SIGN IN"}
+      </Typography>
 
-        <div className={classes.loginRegisterContainer}>
-          {isRegistering ? (
-            <Register
-              errors={errors}
-              theme={newColorTheme}
-              handleRegister={handleRegister}
-              setIsRegistering={setIsRegistering}
-              registerInformation={registerInformation}
-              setRegisterInformation={setRegisterInformation}
-            ></Register>
-          ) : (
-            <Login
-              errors={errors}
-              theme={newColorTheme}
-              handleSignIn={handleSignIn}
-              setIsRegistering={setIsRegistering}
-              handleEmailChange={handleEmailChange}
-              email={email}
-              password={password}
-              handlePasswordChange={handlePasswordChange}
-            ></Login>
-          )}
-        </div>
+      <div className={classes.loginRegisterContainer}>
+        {isRegistering ? (
+          <Register
+            errors={errors}
+            theme={newColorTheme}
+            handleRegister={handleRegister}
+            setIsRegistering={setIsRegistering}
+            registerInformation={registerInformation}
+            setRegisterInformation={setRegisterInformation}
+          ></Register>
+        ) : (
+          <Login
+            errors={errors}
+            theme={newColorTheme}
+            handleSignIn={handleSignIn}
+            setIsRegistering={setIsRegistering}
+            handleEmailChange={handleEmailChange}
+            email={email}
+            password={password}
+            handlePasswordChange={handlePasswordChange}
+          ></Login>
+        )}
       </div>
+    </div>
   );
 }
 export default AuthPage;

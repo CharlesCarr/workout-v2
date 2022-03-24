@@ -41,31 +41,21 @@ const HamNav = (props) => {
           >
             <Link className={classes.link} to="/new-workout">
               <MenuItem onClick={props.handleCloseNavMenu}>
-                <Typography textAlign="center" color="primary">
-                  NEW WORKOUT
-                </Typography>
+                <Typography color="primary">NEW WORKOUT</Typography>
               </MenuItem>
             </Link>
             <Link className={classes.link} to="/all-workouts">
               <MenuItem onClick={props.handleCloseNavMenu}>
-                <Typography textAlign="center" color="primary">
-                  ALL WORKOUTS
-                </Typography>
+                <Typography color="primary">ALL WORKOUTS</Typography>
               </MenuItem>
             </Link>
             <Link className={classes.link} to="/today">
               <MenuItem onClick={props.handleCloseNavMenu}>
-                <Typography textAlign="center" color="primary">
-                  TODAY
-                </Typography>
+                <Typography color="primary">TODAY</Typography>
               </MenuItem>
             </Link>
             <MenuItem>
-              <Typography
-                textAlign="center"
-                color="primary"
-                onClick={props.logoutHandler}
-              >
+              <Typography color="primary" onClick={props.logoutHandler}>
                 LOGOUT
               </Typography>
             </MenuItem>
