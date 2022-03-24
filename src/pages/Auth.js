@@ -96,7 +96,8 @@ function AuthPage(props) {
       registerInformation.password
     )
       .then(() => {
-        history.replace("/new-workout");
+        setIsRegistering(false);
+        history.replace("/");
       })
       .catch((err) => alert(err.message));
   };
