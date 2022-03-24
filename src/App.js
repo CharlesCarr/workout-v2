@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-// Functional Component Imports
-import NewWorkoutPage from "./pages/NewWorkout";
-import AllWorkoutsPage from "./pages/AllWorkouts";
-import TodayWorkoutPage from "./pages/TodayWorkout";
-import AuthPage from "./pages/Auth";
+import LoadingSpinner from './components/layout/LoadingSpinner'
 import NavBar from "./components/layout/navbar/NavBar";
 // Style Imports
 import "./App.css";
@@ -12,6 +8,12 @@ import { createTheme } from "@mui/material/styles";
 // Firebase Imports
 import { onValue, ref } from "firebase/database";
 import { auth, db } from "./firebase";
+
+// Add Lazy Loading for Functional Component Pages
+const NewWorkoutPage = React.lazy(() => import("./pages/NewWorkout"));
+const AllWorkoutsPage = React.lazy(() => import("./pages/AllWorkouts"));
+const TodayWorkoutPage = React.lazy(() => import("./pages/TodayWorkout"));
+const AuthPage = React.lazy(() => import("./pages/Auth"));
 
 function App() {
   // state for Todos - going to be an array b/c will have an array of objects in this
@@ -66,51 +68,55 @@ function App() {
         setIsLoggedIn={setIsLoggedIn}
       />
 
-      <Switch>
-        <Route path="/new-workout">
-          <NewWorkoutPage
-            inputTitle={inputTitle}
-            setInputTitle={setInputTitle}
-            addWorkoutData={getWorkoutData}
-            todos={todos}
-            setTodos={setTodos}
-            fullWorkouts={fullWorkouts}
-            setFullWorkouts={setFullWorkouts}
-            colorTheme={colorTheme}
-          />
-        </Route>
-        <Route path="/all-workouts">
-          <AllWorkoutsPage
-            todos={todos}
-            fullWorkouts={fullWorkouts}
-            wholeWorkout={wholeWorkout}
-            setWholeWorkout={setWholeWorkout}
-          />
-        </Route>
-        <Route path="/today">
-          <TodayWorkoutPage
-            inputTitle={inputTitle}
-            setInputTitle={setInputTitle}
-            todos={todos}
-            fullWorkouts={fullWorkouts}
-            colorTheme={colorTheme}
-            wholeWorkout={wholeWorkout}
-          />
-        </Route>
-        <Route path="/" exact>
-          <AuthPage
-            wholeWorkout={wholeWorkout}
-            setWholeWorkout={setWholeWorkout}
-            displaySavedWorkouts={displaySavedWorkouts}
-            colorTheme={colorTheme}
-            isLoggedIn={isLoggedIn}
-            setIsLoggedIn={setIsLoggedIn}
-          />
-        </Route>
-        <Route path="*">
-          <Redirect to="/"></Redirect>
-        </Route>
-      </Switch>
+      <Suspense
+        fallback={<LoadingSpinner></LoadingSpinner>}
+      >
+        <Switch>
+          <Route path="/new-workout">
+            <NewWorkoutPage
+              inputTitle={inputTitle}
+              setInputTitle={setInputTitle}
+              addWorkoutData={getWorkoutData}
+              todos={todos}
+              setTodos={setTodos}
+              fullWorkouts={fullWorkouts}
+              setFullWorkouts={setFullWorkouts}
+              colorTheme={colorTheme}
+            />
+          </Route>
+          <Route path="/all-workouts">
+            <AllWorkoutsPage
+              todos={todos}
+              fullWorkouts={fullWorkouts}
+              wholeWorkout={wholeWorkout}
+              setWholeWorkout={setWholeWorkout}
+            />
+          </Route>
+          <Route path="/today">
+            <TodayWorkoutPage
+              inputTitle={inputTitle}
+              setInputTitle={setInputTitle}
+              todos={todos}
+              fullWorkouts={fullWorkouts}
+              colorTheme={colorTheme}
+              wholeWorkout={wholeWorkout}
+            />
+          </Route>
+          <Route path="/" exact>
+            <AuthPage
+              wholeWorkout={wholeWorkout}
+              setWholeWorkout={setWholeWorkout}
+              displaySavedWorkouts={displaySavedWorkouts}
+              colorTheme={colorTheme}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          </Route>
+          <Route path="*">
+            <Redirect to="/"></Redirect>
+          </Route>
+        </Switch>
+      </Suspense>
     </div>
   );
 }
