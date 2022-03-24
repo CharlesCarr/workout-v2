@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getDatabase } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
+import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,10 +14,12 @@ const firebaseConfig = {
   projectId: "workout-tracker-faa13",
   storageBucket: "workout-tracker-faa13.appspot.com",
   messagingSenderId: "1094174665089",
-  appId: "1:1094174665089:web:47f62a74b662111c69a080"
+  appId: "1:1094174665089:web:47f62a74b662111c69a080",
+  measurementId: "G-B25G3BZDQ1"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 export const db = getDatabase(app);
 export const auth = getAuth();
