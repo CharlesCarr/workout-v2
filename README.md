@@ -36,4 +36,4 @@ For the next version of this, I plan to add more functionality to have input to 
 
 ### Hosting
 
-Hosting with Firebase (will be adding live link later)
+Hosting with Firebase (https://workout-tracker-faa13.web.app/)
