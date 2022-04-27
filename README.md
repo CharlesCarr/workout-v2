@@ -1,6 +1,7 @@
 # 'My Workout App'
 
-V2 of workout web application built with React.js and Firebase to build, save, and view user workouts
+[Live App Link](https://workout-tracker-faa13.web.app/)
+Workout web application built with React.js and Firebase to easily build, save, view and user workouts
 
 ## Project Description
 
@@ -14,6 +15,9 @@ Areas of focus for this project include:
 - Drap and drop functionality for the workout builder so the user can order the excercises how they wish (using react-beautiful-dnd npm package)
 - Creating auth pages for logging in and signing up users with simple form validation
 - Saving users and their workouts to Firebase for backend functionality
+
+## Screenshots
+![Workout Builder](/screenshots/AllWorkouts.png)
 
 ## Flow of Application
 
@@ -36,4 +40,4 @@ For the next version of this, I plan to add more functionality to have input to 
 
 ### Hosting
 
-Hosting with Firebase (https://workout-tracker-faa13.web.app/)
+Hosting with Firebase [My Workout App](https://workout-tracker-faa13.web.app/)
